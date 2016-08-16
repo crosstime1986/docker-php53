@@ -1,7 +1,7 @@
 FROM helder/php-5.3
 
 RUN  apt-get update \
-  && apt-get install -y libfreetype6-dev libjpeg-dev libpng-dev && rm -rf /var/lib/apt/lists/* \
+  && apt-get install -y libfreetype6-dev libjpeg-dev libpng-dev \
   && mkdir -p /usr/include/freetype2/freetype/ \
   && ln -s /usr/include/freetype2/freetype.h /usr/include/freetype2/freetype/freetype.h \
   && docker-php-ext-configure gd --enable-gd-native-ttf --with-jpeg-dir=/usr/lib/x86_64-linux-gnu --with-png-dir=/usr/lib/x86_64-linux-gnu --with-freetype-dir=/usr/lib/x86_64-linux-gnu \
