@@ -15,6 +15,7 @@ RUN  apt-get update \
   && apt-get -y install libmemcached-dev build-essential \
   && pecl install memcached --with-libmemcached-dir \
   && cd /usr/src/php \
+  && rm -rf /var/lib/apt/lists/* \
   && make clean
 
 
